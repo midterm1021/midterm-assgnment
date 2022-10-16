@@ -191,3 +191,35 @@ ros2@ros2ubuntu:~$ ros2 run demo_nodes_py listener
 [INFO] [1665880121.972925768] [listener]: I heard: [Hello World: 208]
 [INFO] [1665880122.972702650] [listener]: I heard: [Hello World: 209]
 [INFO] [1665880123.973300124] [listener]: I heard: [Hello World: 210]
+
+
+
+
+
+Week_4 
+Turtlesim Installtion
+
+# First I try to install turtlesim packages and update them :
+
+ros2@ros2ubuntu:~$ sudo apt update
+Hit:1 http://packages.ros.org/ros2/ubuntu jammy InRelease                     
+Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease              
+Hit:3 http://kr.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:4 http://kr.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:5 http://kr.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ros2@ros2ubuntu:~$ sudo apt install ros-humble-turtlesim
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ros-humble-turtlesim is already the newest version (1.4.2-1jammy.20220908.233909).
+ros2@ros2ubuntu:~$ sudo apt install ros-humble-turtlesim
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ros-humble-turtlesim is already the newest version (1.4.2-1jammy.20220908.233909).
+ros-humble-turtlesim set to manually installed.
+
