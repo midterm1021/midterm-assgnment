@@ -148,4 +148,46 @@ ros2@ros2ubuntu:~$ sudo apt install ros-humble-desktop
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
+Preparing to unpack .../890-vdpau-driver-all_1.4-3build2_amd64.deb ...
+Unpacking vdpau-driver-all:amd64 (1.4-3build2) ...
+Selecting previously unselected package proj-bin.
+Preparing to unpack .../891-proj-bin_8.2.1-1_amd64.deb ...
+Unpacking proj-bin (8.2.1-1) ...
+Errors were encountered while processing:
+ /tmp/apt-dpkg-install-jJpAHP/559-python3-catkin-pkg-modules_0.5.2-1_all.deb
+ /tmp/apt-dpkg-install-jJpAHP/598-python3-rospkg-modules_1.4.0-1_all.deb
+ /tmp/apt-dpkg-install-jJpAHP/599-python3-rosdistro-modules_0.9.0-1_all.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+ros2@ros2ubuntu:~$ sudo apt install ros-humble-ros-base
+[sudo] password for ros2: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ros-humble-ros-base is already the newest version (0.10.0-1jammy.20220909.041039)
 
+# I do the sourcing in th bash file :
+
+os2@ros2ubuntu:~$ source /opt/ros/humble/setup.bash
+ros2@ros2ubuntu:~$
+
+# After installing all of these packages I try to code with an example: with talker, and listener commands :
+
+ros2@ros2ubuntu:~$ ros2 run demo_nodes_cpp talker
+[INFO] [1665879914.985322644] [talker]: Publishing: 'Hello World: 1'
+[INFO] [1665879915.985764722] [talker]: Publishing: 'Hello World: 2'
+[INFO] [1665879916.985618902] [talker]: Publishing: 'Hello World: 3'
+[INFO] [1665879917.985483234] [talker]: Publishing: 'Hello World: 4'
+[INFO] [1665879918.985780864] [talker]: Publishing: 'Hello World: 5'
+
+------------------------------------------------------------------------------
+
+ros2@ros2ubuntu:~$ source /opt/ros/humble/setup.bash
+ros2@ros2ubuntu:~$ ros2 run demo_nodes_py listener
+[INFO] [1665880116.983412912] [listener]: I heard: [Hello World: 203]
+[INFO] [1665880117.973022045] [listener]: I heard: [Hello World: 204]
+[INFO] [1665880118.972562601] [listener]: I heard: [Hello World: 205]
+[INFO] [1665880119.971714387] [listener]: I heard: [Hello World: 206]
+[INFO] [1665880120.971544159] [listener]: I heard: [Hello World: 207]
+[INFO] [1665880121.972925768] [listener]: I heard: [Hello World: 208]
+[INFO] [1665880122.972702650] [listener]: I heard: [Hello World: 209]
+[INFO] [1665880123.973300124] [listener]: I heard: [Hello World: 210]
