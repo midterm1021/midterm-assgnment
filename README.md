@@ -233,5 +233,6 @@ Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland
 [INFO] [1665882085.889021444] [turtlesim]: Starting turtlesim with node name /turtlesim
 [INFO] [1665882085.910151013] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
 
+![Screenshot from 2022-10-16 10-02-44](https://user-images.githubusercontent.com/115865095/196013102-54a79c87-ad05-42b5-882b-025ebdde521a.png)
 
 
