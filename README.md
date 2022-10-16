@@ -258,3 +258,33 @@ Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rot
 ![Screenshot from 2022-10-16 10-07-53](https://user-images.githubusercontent.com/115865095/196013172-a807c81c-a198-46f2-b41d-6ab38be1c1ae.png)
 
 
+# I do some update and try to run RQT using rqt command :
+
+
+ros2@ros2ubuntu:~$ sudo apt update
+[sudo] password for ubuntu: 
+Hit:1 http://packages.ros.org/ros2/ubuntu jammy InRelease
+Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:3 http://kr.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:4 http://kr.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:5 http://kr.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+56 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ros2@ros2ubuntu:~$
+ros2@ros2ubuntu:~$ sudo apt install ~nros-humble-rqt*
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ros-humble-rqt-bag is already the newest version (1.1.3-2jammy.20220909.040110).
+ros2@ros2ubuntu:~$ rqt
+
+![Screenshot from 2022-10-16 10-28-21](https://user-images.githubusercontent.com/115865095/196013653-6735994b-9b61-44a7-b266-1986bd8cd277.png)
+![Screenshot from 2022-10-16 10-34-33](https://user-images.githubusercontent.com/115865095/196013742-7d50b134-cdd2-465e-ac28-5657fb5d652e.png)
+
+
+
+
+
+
