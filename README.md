@@ -222,12 +222,22 @@ Building dependency tree... Done
 Reading state information... Done
 ros-humble-turtlesim is already the newest version (1.4.2-1jammy.20220908.233909).
 ros-humble-turtlesim set to manually installed.
+
+
+# And I check whether the turtlesim packages is enabled or not :
+
+
 ros2@ros2ubuntu:~$ ros2 pkg executables turtlesim
 turtlesim draw_square
 turtlesim mimic
 turtlesim turtle_teleop_key
 turtlesim turtlesim_node
 ros2@ros2ubuntu:~$ 
+
+
+# After successfull done I try to run and see the turtle appears on the screen :
+
+
 ros2@ros2ubuntu:~$ ros2 run turtlesim turtlesim_node
 Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
 [INFO] [1665882085.889021444] [turtlesim]: Starting turtlesim with node name /turtlesim
@@ -246,4 +256,5 @@ Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rot
 [Screencast from 10-16-2022 10:07:15 AM.webm](https://user-images.githubusercontent.com/115865095/196013170-d9d46737-28ed-4296-b1a0-06b655e7a51f.webm)
 
 ![Screenshot from 2022-10-16 10-07-53](https://user-images.githubusercontent.com/115865095/196013172-a807c81c-a198-46f2-b41d-6ab38be1c1ae.png)
+
 
