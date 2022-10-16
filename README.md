@@ -281,9 +281,14 @@ ros-humble-rqt-bag is already the newest version (1.1.3-2jammy.20220909.040110).
 ros2@ros2ubuntu:~$ rqt
 
 ![Screenshot from 2022-10-16 10-34-33](https://user-images.githubusercontent.com/115865095/196013742-7d50b134-cdd2-465e-ac28-5657fb5d652e.png)
+
+
+
+# As you can see I did some expression I mean I added new coordinates for the turtle to spawn at, x float 1.0, and y float 1.0 like that :
+
+
+
 ![Screenshot from 2022-10-16 10-37-03](https://user-images.githubusercontent.com/115865095/196013849-e587f3a5-9e72-440f-87fc-36174aa506a2.png)
-
-
 
 
 
