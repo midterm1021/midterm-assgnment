@@ -222,4 +222,16 @@ Building dependency tree... Done
 Reading state information... Done
 ros-humble-turtlesim is already the newest version (1.4.2-1jammy.20220908.233909).
 ros-humble-turtlesim set to manually installed.
+ros2@ros2ubuntu:~$ ros2 pkg executables turtlesim
+turtlesim draw_square
+turtlesim mimic
+turtlesim turtle_teleop_key
+turtlesim turtlesim_node
+ros2@ros2ubuntu:~$ 
+ros2@ros2ubuntu:~$ ros2 run turtlesim turtlesim_node
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+[INFO] [1665882085.889021444] [turtlesim]: Starting turtlesim with node name /turtlesim
+[INFO] [1665882085.910151013] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
+
+
 
