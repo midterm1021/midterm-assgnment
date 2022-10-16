@@ -280,8 +280,10 @@ Reading state information... Done
 ros-humble-rqt-bag is already the newest version (1.1.3-2jammy.20220909.040110).
 ros2@ros2ubuntu:~$ rqt
 
-![Screenshot from 2022-10-16 10-28-21](https://user-images.githubusercontent.com/115865095/196013653-6735994b-9b61-44a7-b266-1986bd8cd277.png)
 ![Screenshot from 2022-10-16 10-34-33](https://user-images.githubusercontent.com/115865095/196013742-7d50b134-cdd2-465e-ac28-5657fb5d652e.png)
+![Screenshot from 2022-10-16 10-37-03](https://user-images.githubusercontent.com/115865095/196013849-e587f3a5-9e72-440f-87fc-36174aa506a2.png)
+
+
 
 
 
