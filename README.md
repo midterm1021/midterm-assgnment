@@ -235,4 +235,15 @@ Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland
 
 ![Screenshot from 2022-10-16 10-02-44](https://user-images.githubusercontent.com/115865095/196013102-54a79c87-ad05-42b5-882b-025ebdde521a.png)
 
+ros2@ros2ubuntu:~$ ros2 run turtlesim turtle_teleop_key
+Reading from keyboard
+---------------------------
+Use arrow keys to move the turtle.
+Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.
+'Q' to quit.
+
+
+[Screencast from 10-16-2022 10:07:15 AM.webm](https://user-images.githubusercontent.com/115865095/196013170-d9d46737-28ed-4296-b1a0-06b655e7a51f.webm)
+
+![Screenshot from 2022-10-16 10-07-53](https://user-images.githubusercontent.com/115865095/196013172-a807c81c-a198-46f2-b41d-6ab38be1c1ae.png)
 
