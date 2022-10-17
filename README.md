@@ -318,7 +318,7 @@ wget https://raw.githubusercontent.com/ros2/examples/humble/rclpy/topics/minimal
 Now there will be a new file named publisher_member_function.py adjacent to __init__.py. In order to see them we type ls and we can see publisher_member_function.py and __init__.py files on terminal. In order to open the files just type open before the name of the files : 
 
 
-![Screenshot from 2022-10-18 03-09-38](https://user-images.githubusercontent.com/115865095/196251032-17706be7-ae38-4ec6-bcdb-54ba822aceb7.png)
+![Screenshot from 2022-10-18 03-14-10](https://user-images.githubusercontent.com/115865095/196251864-8d24c866-5a57-4151-903e-0366c5b0c09a.png)
 
 
 
