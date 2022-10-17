@@ -292,6 +292,13 @@ ros2@ros2ubuntu:~$ rqt
 
 
 
+Week_5
+
+Creating a simple publisher and subscriber (python)
+
+1. Create a package
+
+
 
 
 
