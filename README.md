@@ -340,3 +340,35 @@ And we add the dependencies after that :
 
 Add an entry point 
 
+
+We open the setup.py file and match the maintainer, maintainer_email, description and license fields to your package.xml:
+
+![Screenshot from 2022-10-18 03-50-21-1](https://user-images.githubusercontent.com/115865095/196273903-3493d639-09bf-4432-a87b-535ff5efa451.png)
+
+
+
+After that the contents of the setup.cfg file should be correctly populated automatically, like so:
+
+![Screenshot from 2022-10-18 03-51-46](https://user-images.githubusercontent.com/115865095/196274536-6014f5b8-e35c-46d4-9016-4a3ef3a359ab.png)
+
+
+Steep_4 
+Write the subscriber node
+
+
+we navigate to ros2_ws/src/py_pubsub/pysub, and enter the following command :
+
+wget https://raw.githubusercontent.com/ros2/examples/humble/rclpy/topics/minimal_subscriber/examples_rclpy_minimal_subscriber/subscriber_member_function.py
+
+![Screenshot from 2022-10-18 03-52-10-1](https://user-images.githubusercontent.com/115865095/196275429-b5fa2709-eb06-4081-9a9e-8b6afaba7ac0.png)
+
+
+we open __init__.py, publisher_member_function.py, subscriber_member_function.py and fill the dependencies :
+
+![Screenshot from 2022-10-18 03-52-39-1](https://user-images.githubusercontent.com/115865095/196276672-fc337768-6e9a-4afc-95d3-2b8fd75ef168.png)
+
+
+Step_5 
+Build and Run
+
+
