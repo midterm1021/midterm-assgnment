@@ -329,3 +329,14 @@ Step_3 : Adding dependencies :
 
 Navigate to ros2_ws/src/py_pubsub and there is package.xml file. Open the file using open package.xml command : 
 
+Afterr that set the file by filling with my email and licence in my repository
+
+![Screenshot from 2022-10-18 03-50-21-1](https://user-images.githubusercontent.com/115865095/196271874-7bc9f86d-3317-4ad3-aeb7-e94f2bc57c3b.png)
+
+And we add the dependencies after that :
+
+![Screenshot from 2022-10-18 03-50-07](https://user-images.githubusercontent.com/115865095/196271482-a96743c3-d76f-4492-a1b5-a2a3c58ad8f1.png)
+
+
+Add an entry point 
+
