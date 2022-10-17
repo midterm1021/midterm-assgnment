@@ -323,3 +323,9 @@ Now there will be a new file named publisher_member_function.py adjacent to __in
 
 
 ![Screenshot from 2022-10-18 03-12-11](https://user-images.githubusercontent.com/115865095/196251501-5090ab06-b98e-4b8e-ac17-e436dc66cee1.png)
+
+
+Step_3 : Adding dependencies :
+
+Navigate to ros2_ws/src/py_pubsub and there is package.xml file. Open the file using open package.xml command : 
+
