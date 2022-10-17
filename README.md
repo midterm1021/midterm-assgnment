@@ -296,14 +296,16 @@ Week_5
 
 Creating a simple publisher and subscriber (python)
 
-1. Create a package
+Step_1 : Create a package
 
 ros2 pkg create --build-type ament_python py_pubsub
 
 ![Screenshot from 2022-10-18 02-51-14](https://user-images.githubusercontent.com/115865095/196247971-fcfca134-0ab5-4fcf-aa30-bd69f1eed0a3.png)
 
 
+Step_2 : Writing the publisher node
 
+wget https://raw.githubusercontent.com/ros2/examples/humble/rclpy/topics/minimal_publisher/examples_rclpy_minimal_publisher/publisher_member_function.py
 
 
 
