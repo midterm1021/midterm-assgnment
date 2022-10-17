@@ -300,6 +300,9 @@ Creating a simple publisher and subscriber (python)
 
 ros2 pkg create --build-type ament_python py_pubsub
 
+![Screenshot from 2022-10-18 02-51-14](https://user-images.githubusercontent.com/115865095/196247971-fcfca134-0ab5-4fcf-aa30-bd69f1eed0a3.png)
+
+
 
 
 
