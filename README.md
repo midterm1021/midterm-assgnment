@@ -305,7 +305,14 @@ ros2 pkg create --build-type ament_python py_pubsub
 
 Step_2 : Writing the publisher node
 
+Navigate into ros2_ws/src/py_pubsub/py_pubsub
+![Screenshot from 2022-10-18 02-59-04](https://user-images.githubusercontent.com/115865095/196249186-dadbca20-3b9c-4ab9-9dd6-df610d734cad.png)
+
+
+Download the code using this command :
+
 wget https://raw.githubusercontent.com/ros2/examples/humble/rclpy/topics/minimal_publisher/examples_rclpy_minimal_publisher/publisher_member_function.py
+
 
 
 
