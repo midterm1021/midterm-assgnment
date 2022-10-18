@@ -371,5 +371,11 @@ we open __init__.py, publisher_member_function.py, subscriber_member_function.py
 Step_5 
 Build and Run
 
+
+To run rosdep in the root of your workspace (ros2_ws) to check for missing dependencies before building :
+
+(from now on I am using another wmware terminal just because of some problems in my 'ro2@ros2ubuntu' named terminal. Please do not be in doubt with another named terminal, this is also mine.)
 ![image](https://user-images.githubusercontent.com/115865095/196524527-e4115574-cac4-4221-943e-7c92f6a0eee4.png)
+
+
 
