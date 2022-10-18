@@ -376,6 +376,13 @@ To run rosdep in the root of your workspace (ros2_ws) to check for missing depen
 
 (from now on I am using another wmware terminal just because of some problems in my 'ro2@ros2ubuntu' named terminal. Please do not be in doubt with another named terminal, this is also mine.)
 ![image](https://user-images.githubusercontent.com/115865095/196524527-e4115574-cac4-4221-943e-7c92f6a0eee4.png)
+ Then we build a new package in the root of ros2_ws
+ 
+colcon build --packages-select py_pubsub
 
+After that open a new terminal and source the setup files
 
+. install/setup.bash
+
+![image](https://user-images.githubusercontent.com/115865095/196533129-7c5c6199-5df4-4b56-9a5a-12e8f60d7591.png)
 
