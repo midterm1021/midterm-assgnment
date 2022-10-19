@@ -396,3 +396,64 @@ Step 1
 
 #Recall that packages should be created in the src directory, not the root of the workspace. Navigate into ros2_ws/src and create a new package:
 
+![Screenshot from 2022-10-19 19-17-02](https://user-images.githubusercontent.com/115865095/196664428-4dc4dc95-e8d6-449c-921b-213d33896c84.png)
+
+Step 2
+
+# make sure to add the description, maintainer email and name, and license information to package.xm : 
+
+![Screenshot from 2022-10-19 19-21-42](https://user-images.githubusercontent.com/115865095/196665277-1294a4fc-c86b-45f3-9051-fece9a3d5d39.png)
+
+
+![image](https://user-images.githubusercontent.com/115865095/196666339-8b61ae6d-e64b-4413-83b8-c192b998443d.png)
+
+
+Step 3
+
+#Adding an entry point :
+
+![image](https://user-images.githubusercontent.com/115865095/196667692-f28e1e52-5490-43b7-8460-e1c403a3d9fc.png)
+
+
+Step 4
+
+Write the client node
+
+ create a new file called client_member_function.py and paste the following code :
+ 
+ ![image](https://user-images.githubusercontent.com/115865095/196668593-b6402a4b-2861-44e1-9a13-94a89f1d1f0c.png)
+
+
+Step 5
+
+Add an entry point
+The entry_points field of your setup.py file should look like this :
+
+![image](https://user-images.githubusercontent.com/115865095/196669339-446744b3-bda5-46d4-93f9-df1db4324894.png)
+
+Step 6
+
+Build and Run
+
+in the root of your workspace (ros2_ws) to check for missing dependencies before building :
+
+rosdep install -i --from-path src --rosdistro humble -y
+
+# Navigate back to the root of your workspace, ros2_ws, and build your new package : 
+
+colcon build --packages-select py_srvcli
+
+Open a new terminal, navigate to ros2_ws, and source the setup files :
+
+. install/setup.bash
+
+Now run the service node:
+
+ros2 run py_srvcli service
+
+Open another terminal and source the setup files from inside ros2_ws again. Start the client node, followed by any two integers separated by a space :
+
+ros2 run py_srvcli client 2 3
+
+
+
