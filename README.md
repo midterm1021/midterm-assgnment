@@ -386,3 +386,13 @@ After that open a new terminal and source the setup files
 
 ![image](https://user-images.githubusercontent.com/115865095/196533129-7c5c6199-5df4-4b56-9a5a-12e8f60d7591.png)
 
+
+
+
+Week_6
+Write a Simple Service and Client
+
+Step 1
+
+#Recall that packages should be created in the src directory, not the root of the workspace. Navigate into ros2_ws/src and create a new package:
+
