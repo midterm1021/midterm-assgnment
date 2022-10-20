@@ -457,3 +457,43 @@ ros2 run py_srvcli client 2 3
 
 
 
+
+
+
+
+Week_7
+
+Writing an action server and client
+
+Step 1
+
+Writing an action server
+
+# Open a new file in your home directory, let’s call it fibonacci_action_server.py, and add the following code :
+
+
+![Screenshot from 2022-10-20 00-41-20](https://user-images.githubusercontent.com/115865095/196739333-06375700-74b7-46ef-9c04-8a48c0e5f672.png)
+
+# And we try to run our action server :
+
+python3 fibonacci_action_server.py
+
+![Screenshot from 2022-10-20 00-39-16](https://user-images.githubusercontent.com/115865095/196739820-6dfc55a1-9cfb-4b3d-b6c7-f0cc617b4280.png)
+
+In another terminal, we can use the command line interface to send a goal :
+
+ros2 action send_goal fibonacci action_tutorials_interfaces/action/Fibonacci "{order: 5}"
+
+![Screenshot from 2022-10-20 00-44-56](https://user-images.githubusercontent.com/115865095/196740298-f031fe0b-645f-4f24-87e4-dee7cb9701c3.png)
+
+# Now let’s make our goal execution actually compute and return the requested Fibonacci sequence:
+
+![Screenshot from 2022-10-20 13-57-20](https://user-images.githubusercontent.com/115865095/196860243-a4ae64f8-db53-4d3d-8131-df773240f52d.png)
+
+Step 2
+
+Publishing feedback
+
+# We’ll replace the sequence variable, and use a feedback message to store the sequence instead
+
+![Screenshot from 2022-10-20 14-03-28](https://user-images.githubusercontent.com/115865095/196860795-1004afff-9d64-4e5b-8893-b3197ca81089.png)
