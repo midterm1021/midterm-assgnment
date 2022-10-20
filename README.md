@@ -504,3 +504,21 @@ Writing an action client
 
 # We’ll also scope the action client to a single file. Open a new file, let’s call it fibonacci_action_client.py, and add the following boilerplate code :
 
+![Screenshot from 2022-10-21 02-01-48](https://user-images.githubusercontent.com/115865095/197012747-27a7c6d4-1b73-4f0f-80c1-e9a98ccd982f.png)
+
+Let’s test our action client by first running the action server built earlier : 
+
+python3 fibonacci_action_server.py
+
+
+![Screenshot from 2022-10-21 02-07-50](https://user-images.githubusercontent.com/115865095/197014047-e8098cef-b571-4fc0-ba6b-b864a0c493c7.png)
+
+ANd in another terminal we run the action client : 
+
+python3 fibonacci_action_client.py
+
+The action client should start up, and then quickly finish. At this point, we have a functioning action client, but we don’t see any results or get any feedback : 
+
+![image](https://user-images.githubusercontent.com/115865095/197014304-279254ec-2e92-44aa-a868-ce921ce21558.png)
+
+
