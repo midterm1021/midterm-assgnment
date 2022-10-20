@@ -464,8 +464,41 @@ Open another terminal and source the setup files from inside ros2_ws again. Star
 ros2 run py_srvcli client 2 3
 
 
+Part_2
 
 
+Creating custom msg and srv files
+
+Step 1
+
+# Create a new package
+
+Navigate to ros2_ws/src and install a package named "tutorial interfaces" :
+
+ros2 pkg create --build-type ament_cmake tutorial_interfaces
+
+![image](https://user-images.githubusercontent.com/115865095/197050155-60010df5-6c06-4107-9480-018e22f8819b.png)
+
+# Then create two new folders :
+
+![image](https://user-images.githubusercontent.com/115865095/197050653-ae9cde64-5e58-4c27-b6bb-e8fcc9856668.png)
+
+Step msg definition
+
+
+# In the tutorial_interfaces/msg directory you just created, make a new file called Num.msg with one line of code declaring its data structure:
+
+int64 num
+
+![image](https://user-images.githubusercontent.com/115865095/197051166-9ce1fdbd-e3de-4cb5-a617-5946536df1e4.png)
+
+
+# And next to the Num.msg, create a file called Sphere.msg
+
+![image](https://user-images.githubusercontent.com/115865095/197051657-c2a9dbf3-1bf8-4b33-ab22-2318bfd65cc8.png)
+
+
+Step 3 srv definition
 
 
 
