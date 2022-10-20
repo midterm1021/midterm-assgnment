@@ -386,6 +386,27 @@ After that open a new terminal and source the setup files
 
 ![image](https://user-images.githubusercontent.com/115865095/196533129-7c5c6199-5df4-4b56-9a5a-12e8f60d7591.png)
 
+We run the talker node with the command :
+
+ros2 run py_pubsub talker
+
+[INFO] [minimal_publisher]: Publishing: "Hello World: 0"
+[INFO] [minimal_publisher]: Publishing: "Hello World: 1"
+[INFO] [minimal_publisher]: Publishing: "Hello World: 2"
+[INFO] [minimal_publisher]: Publishing: "Hello World: 3"
+[INFO] [minimal_publisher]: Publishing: "Hello World: 4"
+...
+
+Open another terminal, source the setup files from inside ros2_ws again, and then start the listener node:
+
+ros2 run py_pubsub listener
+The listener will start printing messages to the console, starting at whatever message count the publisher is on at that time, like so:
+
+[INFO] [minimal_subscriber]: I heard: "Hello World: 10"
+[INFO] [minimal_subscriber]: I heard: "Hello World: 11"
+[INFO] [minimal_subscriber]: I heard: "Hello World: 12"
+[INFO] [minimal_subscriber]: I heard: "Hello World: 13"
+[INFO] [minimal_subscriber]: I heard: "Hello World: 14"
 
 
 
