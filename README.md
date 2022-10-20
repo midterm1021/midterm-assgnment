@@ -379,7 +379,9 @@ We run the talker node with the command :
 ros2 run py_pubsub talker
 
 ![image](https://user-images.githubusercontent.com/115865095/197040841-3a6ed1cf-f518-46ce-a746-447e1d00b852.png)
-![192699020-a675662c-f6e5-4c0d-8224-1cffdfd0ab65](https://user-images.githubusercontent.com/115865095/197041443-031035fe-c41f-47b6-a5ad-b45986480718.png)
+![192699020-a675662c-f6e5-4c0d-8224-1cffdfd0ab65](https://user-images.githubusercontent.com/115865095/197041853-f8b8972e-337c-4575-89a2-a9629f5b0cd6.png)
+
+
 
 
 Open another terminal, source the setup files from inside ros2_ws again, and then start the listener node:
