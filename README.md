@@ -497,3 +497,10 @@ Publishing feedback
 # We’ll replace the sequence variable, and use a feedback message to store the sequence instead
 
 ![Screenshot from 2022-10-20 14-03-28](https://user-images.githubusercontent.com/115865095/196860795-1004afff-9d64-4e5b-8893-b3197ca81089.png)
+
+Step 3
+
+Writing an action client
+
+# We’ll also scope the action client to a single file. Open a new file, let’s call it fibonacci_action_client.py, and add the following boilerplate code :
+
