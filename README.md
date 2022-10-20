@@ -173,26 +173,14 @@ ros2@ros2ubuntu:~$
 # After installing all of these packages I try to code with an example: with talker, and listener commands :
 
 ros2@ros2ubuntu:~$ ros2 run demo_nodes_cpp talker
-[INFO] [1665879914.985322644] [talker]: Publishing: 'Hello World: 1'
-[INFO] [1665879915.985764722] [talker]: Publishing: 'Hello World: 2'
-[INFO] [1665879916.985618902] [talker]: Publishing: 'Hello World: 3'
-[INFO] [1665879917.985483234] [talker]: Publishing: 'Hello World: 4'
-[INFO] [1665879918.985780864] [talker]: Publishing: 'Hello World: 5'
 
-------------------------------------------------------------------------------
+![Screenshot from 2022-10-21 03-32-43](https://user-images.githubusercontent.com/115865095/197029820-999896c0-5d54-494b-af0a-cad835d4b599.png)
+
 
 ros2@ros2ubuntu:~$ source /opt/ros/humble/setup.bash
 ros2@ros2ubuntu:~$ ros2 run demo_nodes_py listener
-[INFO] [1665880116.983412912] [listener]: I heard: [Hello World: 203]
-[INFO] [1665880117.973022045] [listener]: I heard: [Hello World: 204]
-[INFO] [1665880118.972562601] [listener]: I heard: [Hello World: 205]
-[INFO] [1665880119.971714387] [listener]: I heard: [Hello World: 206]
-[INFO] [1665880120.971544159] [listener]: I heard: [Hello World: 207]
-[INFO] [1665880121.972925768] [listener]: I heard: [Hello World: 208]
-[INFO] [1665880122.972702650] [listener]: I heard: [Hello World: 209]
-[INFO] [1665880123.973300124] [listener]: I heard: [Hello World: 210]
 
-
+![image](https://user-images.githubusercontent.com/115865095/197030218-2f60bd75-2380-4324-9797-7bccecc38244.png)
 
 
 
@@ -390,23 +378,19 @@ We run the talker node with the command :
 
 ros2 run py_pubsub talker
 
-[INFO] [minimal_publisher]: Publishing: "Hello World: 0"
-[INFO] [minimal_publisher]: Publishing: "Hello World: 1"
-[INFO] [minimal_publisher]: Publishing: "Hello World: 2"
-[INFO] [minimal_publisher]: Publishing: "Hello World: 3"
-[INFO] [minimal_publisher]: Publishing: "Hello World: 4"
-...
+![image](https://user-images.githubusercontent.com/115865095/197040841-3a6ed1cf-f518-46ce-a746-447e1d00b852.png)
+![192699020-a675662c-f6e5-4c0d-8224-1cffdfd0ab65](https://user-images.githubusercontent.com/115865095/197041443-031035fe-c41f-47b6-a5ad-b45986480718.png)
+
 
 Open another terminal, source the setup files from inside ros2_ws again, and then start the listener node:
 
 ros2 run py_pubsub listener
 The listener will start printing messages to the console, starting at whatever message count the publisher is on at that time, like so:
 
-[INFO] [minimal_subscriber]: I heard: "Hello World: 10"
-[INFO] [minimal_subscriber]: I heard: "Hello World: 11"
-[INFO] [minimal_subscriber]: I heard: "Hello World: 12"
-[INFO] [minimal_subscriber]: I heard: "Hello World: 13"
-[INFO] [minimal_subscriber]: I heard: "Hello World: 14"
+
+![image](https://user-images.githubusercontent.com/115865095/197041113-f34b241c-7362-4d12-a147-9f1c8ad5627d.png)
+![image](https://user-images.githubusercontent.com/115865095/197040165-7f959096-137c-45d8-aefe-fe7766b01aa5.png)
+
 
 
 
