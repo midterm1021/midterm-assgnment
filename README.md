@@ -1056,3 +1056,118 @@ if __name__ == '__main__':
 
  
  # We’re all set. If we run our action client, you should see feedback being printed to the screen.
+
+  
+ Part_2
+  
+  Step 1
+  
+  Composing multiple nodes in a single process
+  
+  # Checking what components are available in the workspace I am using :
+  
+  
+  ros2 component types
+  
+  
+  ![image](https://user-images.githubusercontent.com/115865095/197123055-910340d3-4bf8-46ba-a9f3-657e258ef4e9.png)
+![image](https://user-images.githubusercontent.com/115865095/197123108-ae4cdaae-07e3-43ab-a2cb-7af8197063d7.png)
+
+ 
+  
+  The terminal will return the list of all available components:
+
+(... components of other packages here)
+composition
+  composition::Talker
+  composition::Listener
+  composition::NodeLikeListener
+  composition::Server
+  composition::Client
+(... components of other packages here)
+
+ Step 2
+  
+Run-time composition using ROS services with a publisher and subscriber
+  
+ ros2 run rclcpp_components component_container
+  
+ # After that we open the second terminal workspace and try to verify the container is running or not with ros2 command line :
+  
+ros2 component list
+  
+![image](https://user-images.githubusercontent.com/115865095/197124062-37c95e6f-6cfd-46d6-9b09-1cc0e5ce06ae.png)
+
+/ComponentManager
+  
+  
+# we try to load the talker component in the second terminal we opened just before :
+ 
+  
+ros2 component load /ComponentManager composition composition::Talker
+  
+# The command will return the unique ID of the loaded component as well as the node name :
+
+ 
+Loaded component 1 into '/ComponentManager' container node as '/talker'
+ 
+  
+ # We run another command to load listener in the second terminal again :
+  
+  
+ ros2 component load /ComponentManager composition composition::Listener
+  
+  
+ # Terminal returns :
+  
+  
+ Loaded component 2 into '/ComponentManager' container node as '/listener'
+  
+ # ros2 command is now available to check the state of the container :
+  
+  ros2 component list
+  
+ # Result :
+  
+ /ComponentManager
+   1  /talker
+   2  /listener
+  
+  
+  Step 3
+  
+  
+ Run-time composition using ROS services with a server and client
+  
+ # The example with a server and a client is very similar.
+
+
+# In the first terminal :
+  
+
+ros2 run rclcpp_components component_container
+
+  
+# In the second terminal :
+ 
+
+ros2 component load /ComponentManager composition composition::Server
+ros2 component load /ComponentManager composition composition::Client
+  
+Step 4
+  
+  
+Compile-time composition using ROS services
+  
+  
+# In the terminal :
+  
+  
+ros2 run composition manual_composition
+ 
+Step 5
+  
+  
+Run-time composition using dlopen
+
+  
