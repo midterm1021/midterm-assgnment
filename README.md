@@ -1115,12 +1115,15 @@ Loaded component 1 into '/ComponentManager' container node as '/talker'
  # We run another command to load listener in the second terminal again :
   
   
+ ![image](https://user-images.githubusercontent.com/115865095/197127754-df2a0a0c-556b-4d76-a678-ca87bb7a7bc3.png)
+
  ros2 component load /ComponentManager composition composition::Listener
   
   
  # Terminal returns :
   
-  
+  ![image](https://user-images.githubusercontent.com/115865095/197127542-c7ed20ce-3b8d-449e-9704-8d18c41dc334.png)
+
  Loaded component 2 into '/ComponentManager' container node as '/listener'
   
  # ros2 command is now available to check the state of the container :
@@ -1128,6 +1131,11 @@ Loaded component 1 into '/ComponentManager' container node as '/talker'
   ros2 component list
   
  # Result :
+  
+  
+  ![image](https://user-images.githubusercontent.com/115865095/197128174-9a56bd71-9d4c-4098-b8b4-ef5a72956ffd.png)
+![image](https://user-images.githubusercontent.com/115865095/197128240-bfbf03a2-a749-46be-8cfd-1f2476c1ba63.png)
+[Screencast from 10-21-2022 03:28:50 PM.webm](https://user-images.githubusercontent.com/115865095/197128280-4eafe2b0-44e9-4277-9727-6d463583436a.webm)
   
  /ComponentManager
    1  /talker
@@ -1147,13 +1155,18 @@ Loaded component 1 into '/ComponentManager' container node as '/talker'
 
 ros2 run rclcpp_components component_container
 
+![image](https://user-images.githubusercontent.com/115865095/197128663-79f06048-1c07-427c-bb4e-a4c913f89b57.png)
+
   
 # In the second terminal :
  
 
 ros2 component load /ComponentManager composition composition::Server
 ros2 component load /ComponentManager composition composition::Client
-  
+ 
+![image](https://user-images.githubusercontent.com/115865095/197128558-ae4c0cc2-9260-4792-aca9-5c55ee95e784.png)
+
+
 Step 4
   
   
@@ -1165,9 +1178,115 @@ Compile-time composition using ROS services
   
 ros2 run composition manual_composition
  
+![image](https://user-images.githubusercontent.com/115865095/197128856-da34e74d-391f-4ad8-8639-d650859a2aaf.png)
+
+  
 Step 5
   
   
 Run-time composition using dlopen
+
+
+# The process will open each library and create one instance of each “rclcpp::Node” class in the library source code).
+ 
+ros2 run composition dlopen_composition `ros2 pkg prefix composition`/lib/libtalker_component.so `ros2 pkg prefix composition`/lib/liblistener_component.so
+  
+![image](https://user-images.githubusercontent.com/115865095/197129060-d7aa59d4-5f13-485c-9255-5f5850c990f6.png)
+
+  
+
+Step 6
+  
+Composition using launch actions
+  
+
+# To automate this action, we can use the functionality in ros2 launch :
+  
+ 
+ros2 launch composition composition_demo.launch.py
+  
+![image](https://user-images.githubusercontent.com/115865095/197129340-ab128f3e-0af4-4d87-a5a7-927fe3a77ba6.png)
+
+
+----------------------------------------------------------------------------------------------
+Advanced Topics 
+----------------------------------------------------------------------------------------------
+  
+  
+1. Unloading components
+  
+
+# In the first terminal  start the component container :
+  
+  
+ros2 run rclcpp_components component_container
+ 
+  
+![image](https://user-images.githubusercontent.com/115865095/197129911-fea66810-2188-481d-9f5a-806e2099f163.png)
+
+  
+# Verify that the container is running via ros2 command line tools:
+ 
+ros2 component list
+  
+
+![image](https://user-images.githubusercontent.com/115865095/197130402-5274768a-2140-4d27-95f0-e433c7de6387.png)
+
+  
+# In the second shell terminal we try to load both talker and listener we have before :
+  
+ ros2 component load /ComponentManager composition composition::Talker
+ros2 component load /ComponentManager composition composition::Listener
+  
+ ![image](https://user-images.githubusercontent.com/115865095/197130774-828905e6-af8c-4383-abd6-14b4af4a6442.png)
+
+  # The first terinal :
+
+  
+![image](https://user-images.githubusercontent.com/115865095/197130699-b6730dac-d991-48ad-8aff-d45caf88610c.png)
+
+
+# Use the unique ID to unload the node from the component container :
+  
+ ros2 component unload /ComponentManager 1 2
+  
+ ![image](https://user-images.githubusercontent.com/115865095/197131080-a60be943-76b2-4ae3-87e8-3cdeee814eb8.png)
+
+  
+2. Remapping container name and namespace
+
+  
+# The component manager name and namespace can be remapped via standard command line arguments :
+  
+ 
+ ros2 run rclcpp_components component_container --ros-args -r __node:=MyContainer -r __ns:=/ns
+ 
+ ![image](https://user-images.githubusercontent.com/115865095/197131667-338fb176-352b-4e07-b0fc-026b0fe00781.png)
+
+  
+  # In a second shell, components can be loaded by using the updated container name:
+
+  ![image](https://user-images.githubusercontent.com/115865095/197131820-ffb5ff0a-c22b-4a20-8746-c4af291f9aa9.png)
+
+3. Remap component names and namespaces
+
+
+ # In the first shell, start the component container:
+  
+  
+  ros2 run rclcpp_components component_container
+  
+  ![image](https://user-images.githubusercontent.com/115865095/197132106-3f522ef6-86c5-4f11-9e29-4e5405215984.png)
+
+  
+  # Remap node name:
+  
+
+ros2 component load /ComponentManager composition composition::Talker --nde-name talker2
+  
+  
+  ![image](https://user-images.githubusercontent.com/115865095/197132549-51fdd707-8e2d-4444-894b-e5b9923c6343.png)
+
+ ![image](https://user-images.githubusercontent.com/115865095/197132465-b20e42b6-7f7e-4788-ac55-ad7a6f0a6610.png)
 
   
