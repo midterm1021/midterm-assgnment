@@ -340,7 +340,7 @@ After that the contents of the setup.cfg file should be correctly populated auto
 ![Screenshot from 2022-10-18 03-51-46](https://user-images.githubusercontent.com/115865095/196274536-6014f5b8-e35c-46d4-9016-4a3ef3a359ab.png)
 
 
-Steep_4 
+Step_4 
 Write the subscriber node
 
 
@@ -500,7 +500,149 @@ int64 num
 
 Step 3 srv definition
 
+# Back to tutorial_interfaces/srv directory and make a new file called AddThreeInts.srv with the following request and response structure :
 
+![image](https://user-images.githubusercontent.com/115865095/197101266-b93d6243-700c-48bf-828c-978d9bda5e56.png)
+
+
+int64 a
+int64 b
+int64 c
+---
+int64 sum
+
+![image](https://user-images.githubusercontent.com/115865095/197101401-e8dcbae7-35d0-4361-8232-2c37bd24cb7a.png)
+
+
+Step 4
+
+CMakeLists.txt
+
+# To convert the interfaces you defined into language-specific code (like C++ and Python) so that they can be used in those languages, add the following lines to CMakeLists.txt :
+
+
+find_package(geometry_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/Num.msg"
+  "msg/Sphere.msg"
+  "srv/AddThreeInts.srv"
+  DEPENDENCIES geometry_msgs # Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
+)
+
+
+Step 5
+
+package.xml
+
+# Add the following lines to package.xml
+
+
+<depend>geometry_msgs</depend>
+
+<build_depend>rosidl_default_generators</build_depend>
+
+<exec_depend>rosidl_default_runtime</exec_depend>
+
+<member_of_group>rosidl_interface_packages</member_of_group>
+
+
+Step 6
+
+Build the tutorial_interfaces package
+
+# All the parts of custom interfaces package are in place, you can build the package. In the root of workspace (~/ros2_ws), run the following command:
+
+colcon build --packages-select tutorial_interfaces
+
+
+Step 7
+
+Confirm msg and srv creation
+
+# n a new terminal, run the following command from within your workspace (ros2_ws) to source it :
+
+. install/setup.bash
+
+# It is time to confirm that interface creation worked by using the ros2 interface show command :
+
+ros2 interface show tutorial_interfaces/msg/Num
+
+# It returns : 
+
+int64 num
+
+# And
+
+ros2 interface show tutorial_interfaces/msg/Sphere
+
+geometry_msgs/Point center
+        float64 x
+        float64 y
+        float64 z
+float64 radius
+
+# And
+
+ros2 interface show tutorial_interfaces/srv/AddThreeInts
+
+# And
+
+int64 a
+int64 b
+int64 c
+---
+int64 sum
+
+Step 8
+
+Testing Num.msg with pub/sub
+
+# Publisher :
+
+
+#include <chrono>
+#include <memory>
+
+#include "rclcpp/rclcpp.hpp"
+#include "tutorial_interfaces/msg/num.hpp"                                            // CHANGE
+
+using namespace std::chrono_literals;
+
+class MinimalPublisher : public rclcpp::Node
+{
+public:
+  MinimalPublisher()
+  : Node("minimal_publisher"), count_(0)
+  {
+    publisher_ = this->create_publisher<tutorial_interfaces::msg::Num>("topic", 10);  // CHANGE
+    timer_ = this->create_wall_timer(
+      500ms, std::bind(&MinimalPublisher::timer_callback, this));
+  }
+
+private:
+  void timer_callback()
+  {
+    auto message = tutorial_interfaces::msg::Num();                                   // CHANGE
+    message.num = this->count_++;                                                     // CHANGE
+    RCLCPP_INFO_STREAM(this->get_logger(), "Publishing: '" << message.num << "'");    // CHANGE
+    publisher_->publish(message);
+  }
+  rclcpp::TimerBase::SharedPtr timer_;
+  rclcpp::Publisher<tutorial_interfaces::msg::Num>::SharedPtr publisher_;             // CHANGE
+  size_t count_;
+};
+
+int main(int argc, char * argv[])
+{
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<MinimalPublisher>());
+  rclcpp::shutdown();
+  return 0;
+}
+
+  
 
 Week_7
 
