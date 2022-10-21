@@ -1240,7 +1240,7 @@ ros2 component load /ComponentManager composition composition::Listener
   
  ![image](https://user-images.githubusercontent.com/115865095/197130774-828905e6-af8c-4383-abd6-14b4af4a6442.png)
 
-  # The first terinal :
+  # The first terminal :
 
   
 ![image](https://user-images.githubusercontent.com/115865095/197130699-b6730dac-d991-48ad-8aff-d45caf88610c.png)
@@ -1264,7 +1264,7 @@ ros2 component load /ComponentManager composition composition::Listener
  ![image](https://user-images.githubusercontent.com/115865095/197131667-338fb176-352b-4e07-b0fc-026b0fe00781.png)
 
   
-  # In a second shell, components can be loaded by using the updated container name:
+  # In the second shell, components can be loaded by using the updated container name:
 
   ![image](https://user-images.githubusercontent.com/115865095/197131820-ffb5ff0a-c22b-4a20-8746-c4af291f9aa9.png)
 
@@ -1289,4 +1289,63 @@ ros2 component load /ComponentManager composition composition::Talker --nde-name
 
  ![image](https://user-images.githubusercontent.com/115865095/197132465-b20e42b6-7f7e-4788-ac55-ad7a6f0a6610.png)
 
+ 
+  # Remap namespace :
   
+  
+  ros2 component load /ComponentManager composition composition::Talker --node-namespace /ns
+  
+  
+  ![image](https://user-images.githubusercontent.com/115865095/197133863-40cba7c9-b029-4886-a175-fabefb832b3a.png)
+
+  ![image](https://user-images.githubusercontent.com/115865095/197133779-b14d3f80-0d88-445d-839f-48dc12f56104.png)
+
+  
+  # Remap both:
+  
+
+ros2 component load /ComponentManager composition composition::Talker --node-name talker3 --node-namespace /ns2
+
+ ![image](https://user-images.githubusercontent.com/115865095/197134140-ec315ae9-8c27-41d9-87d8-7db28e207ecc.png)
+
+  ![image](https://user-images.githubusercontent.com/115865095/197134055-1353e4a0-8c92-4604-80e0-f095931e80cc.png)
+
+# Now use ros2 command line utility:
+
+  
+ros2 component list
+
+  
+# In the console you should see corresponding entries:
+
+  
+  ![image](https://user-images.githubusercontent.com/115865095/197134302-02196288-27b2-44d4-8672-e7bbc297afb4.png)
+
+/ComponentManager
+   1  /talker2
+   2  /ns/talker
+   3  /ns2/talker3
+
+  
+4 . Passing parameter values into components
+  
+ros2 component load /ComponentManager image_tools image_tools::Cam2Image -p burger_mode:=true
+  
+  
+ ![image](https://user-images.githubusercontent.com/115865095/197135256-cc50221b-4990-4491-9135-70428509fae8.png)
+![image](https://user-images.githubusercontent.com/115865095/197134542-bf1a4d9b-b114-4a3f-9f2b-5be22083696e.png)
+![image](https://user-images.githubusercontent.com/115865095/197135386-6e11fe50-fbba-425a-9cde-b14eb3b291d5.png)
+
+  
+  
+5. Passing additional arguments into components
+  
+
+ros2 component load /ComponentManager composition composition::Talker -e use_intra_process_comms:=true
+  
+  ![image](https://user-images.githubusercontent.com/115865095/197135072-b207e61b-ad83-4953-b60d-679611a66da0.png)
+ ![image](https://user-images.githubusercontent.com/115865095/197134893-91920a08-0264-412c-b8f0-ea386c65496d.png)
+  ![image](https://user-images.githubusercontent.com/115865095/197135145-449ac096-8b52-4473-b642-d0125e3f3eac.png)
+
+
+And I will finish the work in here.
